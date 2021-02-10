@@ -5,6 +5,7 @@ import { Component } from 'react';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios';
 import reactDom from 'react-dom';
+import Card from './component/Cards'
 class App extends Component {
   state = {
     modal: false,
@@ -81,19 +82,25 @@ modalClose = () => {
 
   render()
 {
+    
 
-
- 
+  let test_const = this.state.tasks.map( (item,index) => 
+       <span  key={index}>  <Card id={index} key={index} label={item.name}></Card> 
+       <br></br>
+       </span>
+      );
 
     return(
       <div className="App">
         <h4>Active tasks</h4>
-       
-          <ul>
+        <div style={{paddingLeft: '36%'}}>
+        {test_const}
+        </div>
+        {/*   <ul>
           {this.state.tasks.map((item,index) => 
                <li key={index}>{item.name}</li>
           )}
-        </ul>
+        </ul> */}
       <a href="javascript:;" onClick={e => this.modalOpen(e)}>
         Click To add New Active Task
       </a>
