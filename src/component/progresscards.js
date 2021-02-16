@@ -1,6 +1,6 @@
 import react from 'react';
 import styles from './Cards.module.css';
-let Card = (props) => {
+let ProgressCard = (props) => {
    
     return(
 
@@ -10,12 +10,12 @@ let Card = (props) => {
  
     {props.label}
   </div>
-      <button onClick={props.delete_function}>Delete</button>
+     
   </div>
  
  
     )
 }
 
-export default Card;
+export default ProgressCard;
 
